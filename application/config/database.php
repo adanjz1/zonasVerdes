@@ -48,6 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+$db['default']['zonasVerdes'] = 'zonasverdes';
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = '';
 $db['default']['password'] = '';
