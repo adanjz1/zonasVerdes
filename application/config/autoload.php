@@ -52,7 +52,11 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
+<<<<<<< HEAD
 $autoload['libraries'] = array('databases');
+=======
+$autoload['libraries'] = array('database');
+>>>>>>> 7f9648f1eb57237c48fc74a77fac511b85709a2f
 
 
 /*
@@ -64,7 +68,7 @@ $autoload['libraries'] = array('databases');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+$autoload['helper'] = array('url');
 
 
 /*
