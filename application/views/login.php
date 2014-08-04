@@ -1,16 +1,15 @@
-<html>
-    <body>
-        
-        <h1>{mensajeBienvenida}</h1>
-        <form action="/index.php/usuarios/login" method="POST">
-            Usuario: <input type="text" name="username" value="<?=((!empty($datosUsuario[0]->username))?$datosUsuario[0]->username:'')?>">
-            Password: <input type="password" name="password">
-            <input type="submit">
-        </form>
-        {datosUsuario}
-            {id}
-            {username}
-            {password}
-        {/datosUsuario}
-    </body>
-</html>
+<link href="/media/css/styles.css" rel="stylesheet">        
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+
+            <div class="container">
+
+                <form action="/index.php/usuarios/login" method="POST">
+                        <h1 class="form-signin-heading text-muted">{mensajeBienvenida}</h1>
+                        <input type="text" name="username" class="form-control" placeholder="Email address" required="" autofocus="">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Sign In
+                        </button>
+                </form>
+            </div>
+        </div>

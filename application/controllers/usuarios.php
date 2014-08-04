@@ -21,18 +21,66 @@ class Usuarios extends CI_Controller {
 	{
                 $data['mensajeBienvenida'] = "Hola mariano, logueate";
 		$this->load->library('parser');
+                $this->parser->parse('widgets/header', $data);
                 $this->parser->parse('login', $data);               
+                $this->parser->parse('widgets/footer', $data);
 	}
         public function login(){
             $this->load->model('usuarios_model');
             $usuario = $this->usuarios_model->login($_POST['username'],$_POST['password']);
-            if(empty($usuario)){
-                $usuarioNew = array('username'=>$_POST['username'],'password'=>$_POST['password']);
-                $this->usuarios_model->insert($usuarioNew); 
+            if(!empty($usuario)){
+                $_SESSION['usuario'] = $usuario;
+                redirect('/usuarios/menu');
             }
-            $data['datosUsuario']= $usuario;
+        }
+        public function menu(){
+            $this->load->model('usuarios_model');
+            $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             $this->load->library('parser');
-            $this->parser->parse('login', $data);               
+            $this->parser->parse('widgets/header', $data);
+            $this->parser->parse('widgets/menu', $data);
+            $this->parser->parse('widgets/footer', $data);
+        }
+        public function lista(){
+            $this->load->library('crud');
+            $data = $this->crud->getDataList('usuarios',$this);
+            
+            $this->load->model('usuarios_model');
+            $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
+            
+            $this->load->library('parser');
+            $this->parser->parse('widgets/header', $data);
+            $this->parser->parse('widgets/menu', $data);
+            $this->parser->parse('list', $data);
+            $this->parser->parse('widgets/footer', $data);
+        }
+        public function add($id=''){
+            $this->load->library('crud');
+            $data = $this->crud->getFormData('usuarios',$this,$id);
+            
+            $this->load->model('usuarios_model');
+            $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
+            
+            $this->load->library('parser');
+            $this->parser->parse('widgets/header', $data);
+            $this->parser->parse('widgets/menu', $data);
+            $this->parser->parse('form', $data);
+            $this->parser->parse('widgets/footer', $data);
+        }
+        public function save(){
+            if(empty($_POST['id'])){
+                $this->load->model('crud_model');
+                $this->crud_model->insert($_POST,'usuarios');
+            }else{
+                $this->load->model('crud_model');
+                $this->crud_model->update($_POST,'usuarios');
+            }
+            redirect('usuarios/menu');
+        }
+        public function delete($id){
+            $this->load->model('crud_model');
+            $this->crud_model->delete($id,'usuarios');
+            redirect('usuarios/menu');
         }
 }
 

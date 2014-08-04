@@ -11,13 +11,13 @@ class Usuarios_model extends CI_Model {
             $this->db->where('password',$pass);
             $query = $this->db->get();
             //var_dump($this->db->last_query());
-            return $query->result();   
+            return $query->row();   
         }
-        public function select($campo,$valor){
-            $this->db->from('Usuarios');
-            $this->db->where($campo,$valor);
+        public function getPermissions($id){
+            $this->db->from('usuario_permiso');
+            $this->db->where('idUsuario',$id);
+            $this->db->join('permisos','permisos.IDPermiso = usuario_permiso.idPermiso');
             $query = $this->db->get();
-            //var_dump($this->db->last_query());
             return $query->result();   
         }
         function insert($data){

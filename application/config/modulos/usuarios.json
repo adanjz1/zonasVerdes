@@ -1,0 +1,42 @@
+{
+    "permitId":1,
+    "title":"Usuarios",
+    "titleA":"Alta de usuario",
+    "titleB":"Baja de usuario",
+    "titleM":"Modificacion de usuario",
+    "from":"usuarios",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"usuarios",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "username":{
+            "tableName":"usuarios",
+            "fieldName":"username",
+            "displayName":"usuario",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "password":{
+            "tableName":"usuarios",
+            "fieldName":"password",
+            "displayName":"clave",
+            "formInput":"password",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }
+    }
+    
+}
