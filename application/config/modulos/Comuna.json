@@ -1,0 +1,31 @@
+{
+    "permitId":1,
+    "title":"Comuna",
+    "titleA":"Alta de Comuna",
+    "titleB":"Baja de Comuna",
+    "titleM":"Modificacion de Comuna",
+    "from":"comuna",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"comuna",
+            "fieldName":"id",
+            "displayName":"IDComuna",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "username":{
+            "tableName":"comuna",
+            "fieldName":"Comuna",
+            "displayName":"Comuna",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }
+    }
+}

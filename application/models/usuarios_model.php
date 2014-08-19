@@ -16,7 +16,7 @@ class Usuarios_model extends CI_Model {
         public function getPermissions($id){
             $this->db->from('usuario_permiso');
             $this->db->where('idUsuario',$id);
-            $this->db->join('permisos','permisos.IDPermiso = usuario_permiso.idPermiso');
+            $this->db->join('permisos','permisos.idPermiso = usuario_permiso.idPermiso');
             $query = $this->db->get();
             return $query->result();   
         }
