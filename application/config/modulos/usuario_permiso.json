@@ -1,0 +1,41 @@
+{
+    "permitId":1,
+    "title":"Usuarios Permisos",
+    "titleA":"Alta de Usuarios Permisos",
+    "titleB":"Baja de Usuarios Permisos",
+    "titleM":"Modificación de Usuarios Permisos",
+    "from":"usuario_permiso",
+    "where": "",
+    "fields": {
+        "id":{
+            "tableName":"usuario_permiso",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "idUsuario":{
+            "tableName":"usuario_permiso",
+            "fieldName":"idUsuario",
+            "displayName":"id del Usuario",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "idPermiso":{
+            "tableName":"usuario_permiso",
+            "fieldName":"idPermiso",
+            "displayName":"idPermiso",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }        
+    }
+}

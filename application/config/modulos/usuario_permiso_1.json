@@ -1,14 +1,14 @@
 {
     "permitId":1,
-    "title":"Usuarios",
-    "titleA":"Alta de usuario",
-    "titleB":"Baja de usuario",
-    "titleM":"Modificación de usuario",
-    "from":"usuarios",
-    "where":"",
+    "title":"Usuarios Permisos",
+    "titleA":"Alta de Usuarios Permisos",
+    "titleB":"Baja de Usuarios Permisos",
+    "titleM":"Modificación de Usuarios Permisos",
+    "from":"usuario_permiso, usuarios, permisos",
+    "where": "usuarios.id = usuario_permiso.idUsuario and permisos.id = usuario_permiso.idPermiso ",
     "fields": {
         "id":{
-            "tableName":"usuarios",
+            "tableName":"usuario_permiso",
             "fieldName":"id",
             "displayName":"id",
             "formInput":"hidden",
@@ -17,26 +17,25 @@
             "isId":true,
             "showList":false
         },
-        "username":{
+        "Permisos":{
             "tableName":"usuarios",
             "fieldName":"username",
-            "displayName":"usuario",
+            "displayName":"Nombre Usuario",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
         },
-        "password":{
-            "tableName":"usuarios",
-            "fieldName":"password",
-            "displayName":"clave",
-            "formInput":"password",
+        "idPermiso":{
+            "tableName":"permisos",
+            "fieldName":"Nombre",
+            "displayName":"Nombre Permiso",
+            "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        }
+        }        
     }
-    
 }

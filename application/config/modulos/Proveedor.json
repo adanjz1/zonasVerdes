@@ -1,9 +1,9 @@
 {
     "permitId":1,
-    "title":"Usuarios",
+    "title":"Proveedores",
     "titleA":"Alta de Proveedor",
     "titleB":"Baja de Proveedor",
-    "titleM":"Modificacion de Proveedor",
+    "titleM":"Modificación de Proveedor",
     "from":"proveedor",
     "where":"",
     "fields": {
@@ -17,7 +17,7 @@
             "isId":true,
             "showList":false
         },
-        "RazonSocial":{
+        "Razon Social":{
             "tableName":"proveedor",
             "fieldName":"Razon_Social",
             "displayName":"Razon Social",
@@ -27,7 +27,7 @@
             "isId":false,
             "showList":true
         },
-        "Telefono":{
+        "Telefóno":{
             "tableName":"proveedor",
             "fieldName":"Telefono",
             "displayName":"Teléfono",
