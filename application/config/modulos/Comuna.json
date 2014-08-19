@@ -17,7 +17,7 @@
             "isId":true,
             "showList":false
         },
-        "username":{
+        "comuna":{
             "tableName":"comuna",
             "fieldName":"Comuna",
             "displayName":"Comuna",

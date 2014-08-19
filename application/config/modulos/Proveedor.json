@@ -1,0 +1,100 @@
+{
+    "permitId":1,
+    "title":"Usuarios",
+    "titleA":"Alta de Proveedor",
+    "titleB":"Baja de Proveedor",
+    "titleM":"Modificacion de Proveedor",
+    "from":"proveedor",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"proveedor",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "RazonSocial":{
+            "tableName":"proveedor",
+            "fieldName":"Razon_Social",
+            "displayName":"Razon Social",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Telefono":{
+            "tableName":"proveedor",
+            "fieldName":"Telefono",
+            "displayName":"Teléfono",
+            "formInput":"tel",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Contacto":{
+            "tableName":"proveedor",
+            "fieldName":"Contacto",
+            "displayName":"Nombre Del Contacto",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Email":{
+            "tableName":"proveedor",
+            "fieldName":"Email",
+            "displayName":"Email",
+            "formInput":"email",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Calle":{
+            "tableName":"proveedor",
+            "fieldName":"Calle",
+            "displayName":"Calle",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Altura":{
+            "tableName":"proveedor",
+            "fieldName":"Altura",
+            "displayName":"Altura",
+            "formInput":"number",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },"Departamento":{
+            "tableName":"proveedor",
+            "fieldName":"Departamento",
+            "displayName":"Departamento",
+            "formInput":"Text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "TipoFactura":{
+            "tableName":"proveedor",
+            "fieldName":"Tipo_de_Factura",
+            "displayName":"Tipo De Facturación",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }        
+    }
+}
