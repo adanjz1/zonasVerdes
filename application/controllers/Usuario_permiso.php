@@ -23,28 +23,30 @@ class Usuario_permiso extends CI_Controller {
         }
         public function lista(){
             $this->load->library('crud');
-            $data = $this->crud->getDataList('usuario_permiso',$this);
+            $data = $this->crud->getDataListJoin('usuario_permiso',$this);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
+            $data['usuarios'] = "";
             
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
-            $this->parser->parse('list', $data);
+            $this->parser->parse('ListUsuarioPermisos', $data);
             $this->parser->parse('widgets/footer', $data);
         }
         public function add($id=''){
             $this->load->library('crud');
-            $data = $this->crud->getFormData('usuario_permiso',$this,$id);
+            $data = $this->crud->getFormDataUS('usuario_permiso',$this,$id);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             
+            
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
-            $this->parser->parse('form', $data);
+            $this->parser->parse('formUsuarioPermiso', $data);
             $this->parser->parse('widgets/footer', $data);
         }
         public function save(){
