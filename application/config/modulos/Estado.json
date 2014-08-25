@@ -1,0 +1,31 @@
+{
+    "permitId":1,
+    "title":"Estados",
+    "titleA":"Alta de Estado",
+    "titleB":"Baja de Estado",
+    "titleM":"Modificación de Estado",
+    "from":"estado",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"estado",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "Estado":{
+            "tableName":"estado",
+            "fieldName":"Estado",
+            "displayName":"Estado",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }        
+    }
+}

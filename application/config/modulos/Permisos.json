@@ -1,14 +1,14 @@
 {
     "permitId":1,
-    "title":"Usuarios",
-    "titleA":"Alta de usuario",
-    "titleB":"Baja de usuario",
-    "titleM":"Modificación de usuario",
-    "from":"usuarios",
+    "title":"Permisos",
+    "titleA":"Alta de Permisos",
+    "titleB":"Baja de Permisos",
+    "titleM":"Modificación de Permisos",
+    "from":"permisos",
     "where":"",
     "fields": {
         "id":{
-            "tableName":"usuarios",
+            "tableName":"permisos",
             "fieldName":"id",
             "displayName":"id",
             "formInput":"hidden",
@@ -17,26 +17,25 @@
             "isId":true,
             "showList":false
         },
-        "username":{
-            "tableName":"usuarios",
-            "fieldName":"username",
-            "displayName":"usuario",
+        "Permisos":{
+            "tableName":"permisos",
+            "fieldName":"Descripcion",
+            "displayName":"Descripción",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
         },
-        "password":{
-            "tableName":"usuarios",
-            "fieldName":"password",
-            "displayName":"clave",
-            "formInput":"password",
+        "Nombre":{
+            "tableName":"permisos",
+            "fieldName":"Nombre",
+            "displayName":"nombre",
+            "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        }
+        }        
     }
-    
 }

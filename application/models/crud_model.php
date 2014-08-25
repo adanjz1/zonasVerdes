@@ -5,13 +5,15 @@ class Crud_model extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 	}
-        public function select($select,$from,$where){
+        public function select($select,$from,$where,$orderby){
             if(!empty($select))
                 $this->db->select($select);
             //$this->db->from($from);
             if(!empty($where))
                 $this->db->where($where);
             //$this->db->join($join);
+            if(!empty($orderby))
+                $this->db->order_by($orderby,"desc");
             $query = $this->db->get($from);
             return $query->result();   
         }
