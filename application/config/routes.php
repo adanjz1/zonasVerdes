@@ -37,10 +37,6 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-<<<<<<< HEAD
-
-=======
->>>>>>> 7f9648f1eb57237c48fc74a77fac511b85709a2f
 $route['default_controller'] = "usuarios";
 $route['404_override'] = '';
 
