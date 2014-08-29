@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Usuarios extends CI_Controller {
+class Trabajo extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,36 +19,21 @@ class Usuarios extends CI_Controller {
 	 */
 	public function index()
 	{
-                $data['mensajeBienvenida'] = "Bienvenido";
-		$this->load->library('parser');
-                $this->parser->parse('widgets/header', $data);
-                $this->parser->parse('login', $data);               
-                $this->parser->parse('widgets/footer', $data);
-	}
-        public function login(){
-            $this->load->model('usuarios_model');
-            $usuario = $this->usuarios_model->login($_POST['username'],$_POST['password']);
-            if(!empty($usuario)){
-                $_SESSION['usuario'] = $usuario;
-                redirect('/usuarios/menu');
-            }
-        }
-        public function menu(){
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
             $this->parser->parse('widgets/footer', $data);
-        }
+        }   
         public function lista(){
             $this->load->library('crud');
-            $data = $this->crud->getDataList('usuarios',$this);
+            $data = $this->crud->getDataList('Trabajo',$this);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             
-            $data['nombreJson'] = "usuarios";
+            $data['nombreJson'] = "Trabajo";
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
@@ -57,7 +42,7 @@ class Usuarios extends CI_Controller {
         }
         public function add($id=''){
             $this->load->library('crud');
-            $data = $this->crud->getFormData('usuarios',$this,$id);
+            $data = $this->crud->getFormData('Trabajo',$this,$id);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
@@ -71,17 +56,18 @@ class Usuarios extends CI_Controller {
         public function save(){
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
-                $this->crud_model->insert($_POST,'usuarios');
+                $this->crud_model->insert($_POST,'Trabajo');
             }else{
                 $this->load->model('crud_model');
-                $this->crud_model->update($_POST,'usuarios');
+                $this->crud_model->update($_POST,'Trabajo');
             }
-            redirect('usuarios/menu');
+            redirect('Comuna/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
-            $this->crud_model->delete($id,'usuarios');
-            redirect('usuarios/menu');
+            $this->crud_model->delete($id,'Trabajo');
+            redirect('Trabajo/lista');
         }
 }
+
 
