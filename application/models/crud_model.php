@@ -1,11 +1,10 @@
 <?php
-
 class Crud_model extends CI_Model {
 
 	public function __construct() {
 		parent::__construct();
 	}
-        public function select($select,$from,$where,$orderby){
+        public function select($select,$from,$where,$orderby,$join=array()){
             if(!empty($select))
                 $this->db->select($select);
             //$this->db->from($from);
@@ -14,6 +13,8 @@ class Crud_model extends CI_Model {
             //$this->db->join($join);
             if(!empty($orderby))
                 $this->db->order_by($orderby,"desc");
+            if(!empty($join))
+                $this->db->join($join[0],$join[1]);
             $query = $this->db->get($from);
             return $query->result();   
         }
