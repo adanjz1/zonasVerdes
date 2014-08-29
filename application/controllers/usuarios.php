@@ -19,7 +19,7 @@ class Usuarios extends CI_Controller {
 	 */
 	public function index()
 	{
-                $data['mensajeBienvenida'] = "Bienvenido";
+                $data['mensajeBienvenida'] = "Hola mariano, logueate";
 		$this->load->library('parser');
                 $this->parser->parse('widgets/header', $data);
                 $this->parser->parse('login', $data);               
