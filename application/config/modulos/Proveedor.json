@@ -50,7 +50,7 @@
         "Email":{
             "tableName":"proveedor",
             "fieldName":"Email",
-            "displayName":"Email",
+            "displayName":"E-mail",
             "formInput":"email",
             "validation":["required"],
             "default":"",

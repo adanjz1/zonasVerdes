@@ -23,10 +23,16 @@ $(function(){
             <table class="table table-bordred table-striped">
                 <thead>
                     <tr>
-                        <?php foreach($rows as $r){?>
-                            <th><?=$r?></th>
-                        <?php } ?>
-                            <th>Acciones</th>
+                    <?php
+                    $json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/application/config/modulos/'.$nombreJson.'.json');
+                    $json = json_decode($json);
+                    foreach($json->fields as $f){
+                          if($f->showList){
+                              ?> <th><?=$f->displayName;?></th>                               
+                         <?php } 
+                        }                   
+                    ?>
+                              <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>

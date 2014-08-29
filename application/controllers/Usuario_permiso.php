@@ -27,7 +27,7 @@ class Usuario_permiso extends CI_Controller {
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
-            $data['usuarios'] = "";
+            $data['nombreJson'] = "usuario_permiso";
             
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
@@ -41,7 +41,7 @@ class Usuario_permiso extends CI_Controller {
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
-            
+            $data['id']=$id;
             
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);

@@ -18,9 +18,19 @@
             "showList":false
         },
         "idUsuario":{
+            "tableName":"usuario_permiso",
+            "fieldName":"IdUsuario",
+            "displayName":"Id Usuario",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "UsuarioName":{
             "tableName":"usuarios",
             "fieldName":"username",
-            "displayName":"Nombre Usuario",
+            "displayName":"Nombre de Usuario",
             "formInput":"text",
             "validation":["required"],
             "default":"",
@@ -30,12 +40,12 @@
         "idPermiso":{
             "tableName":"permisos",
             "fieldName":"Nombre",
-            "displayName":"Nombre Permiso",
+            "displayName":"Permiso",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        }        
+        }       
     }
 }

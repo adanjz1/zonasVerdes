@@ -20,7 +20,7 @@
         "username":{
             "tableName":"usuarios",
             "fieldName":"username",
-            "displayName":"usuario",
+            "displayName":"Nombre De Usuario",
             "formInput":"text",
             "validation":["required"],
             "default":"",
@@ -30,7 +30,7 @@
         "password":{
             "tableName":"usuarios",
             "fieldName":"password",
-            "displayName":"clave",
+            "displayName":"Contraseña",
             "formInput":"password",
             "validation":["required"],
             "default":"",

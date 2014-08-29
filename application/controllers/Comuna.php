@@ -25,7 +25,7 @@ class Comuna extends CI_Controller {
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
             $this->parser->parse('widgets/footer', $data);
-        }
+        }   
         public function lista(){
             $this->load->library('crud');
             $data = $this->crud->getDataList('Comuna',$this);
@@ -33,6 +33,7 @@ class Comuna extends CI_Controller {
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             
+            $data['nombreJson'] = "Comuna";
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);

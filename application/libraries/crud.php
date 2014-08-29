@@ -72,16 +72,20 @@ class Crud {
             if(!empty($id)){
                 $d['title'] = $json->titleM;
                 $f=$json->fields;
-                $where  = $file.'.id = '.$id. " AND usuarios.id = usuario_permiso.idUsuario";
+                $where  = "IdUsuario = (select ".$file.".IdUsuario from ".$file." where ".$file.".id=".$id.")";
                 $t->load->model('crud_model');
-                $select= $file.'.id,'.$file.'.idUsuario,'.$file.'.idPermiso,'." , usuarios.username";
-                $info = $t->crud_model->select($select, $file.", usuarios",$where, '');
-                $d['info'] = (array)$info[0];
+                $select= $file.'.idPermiso,'.$file.'.IdUsuario' ;
+                $info = $t->crud_model->select($select, $file,$where, '');
+                $d['info'] = (array)$info;
             }
+           // $usucp= $t->crud_model->selectDis("usuario_permiso.idUsuario",$file);
+           // $d['usuariocp']=(array)$usucp;
+            
             $t->load->model('crud_model');
             $d['permisos']= $t->crud_model->select("id,nombre","permisos","", '');
             $d['usuarios']= $t->crud_model->select("id,username","usuarios","", '');
             $d['form'] = (array)$json->fields;
             return $d;
         }
+        
 }

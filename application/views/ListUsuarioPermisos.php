@@ -1,7 +1,7 @@
 <script>
 $(function(){
     $('.glyphicon-plus').click(function(){
-        document.location='/index.php/{module}/add/'+$(this).parent().parent().attr('rel');
+        document.location='/index.php/{module}/add';
     });
     $('.edit').click(function(){
         document.location='/index.php/{module}/add/'+$(this).parent().parent().attr('rel');
@@ -23,22 +23,40 @@ $(function(){
             <table class="table table-bordred table-striped">
                 <thead>
                     <tr>
-                        <?php foreach($rows as $r){?>
-                            <th><?=$r?></th>
-                        <?php } ?>
-                            <th>Acciones</th>
+                    <?php
+                    $json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/application/config/modulos/'.$nombreJson.'.json');
+                    $json = json_decode($json);
+                    foreach($json->fields as $f){
+                          if($f->showList){
+                              ?> <th><?=$f->displayName;?></th>                               
+                         <?php } 
+                        }                   
+                    ?>
+                              <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     
                     <?php 
+                        $aux=-1;
                         foreach($table as $t){?>
                         <tr rel='<?=$t->id?>'>
-                            <?php foreach($rows as $r){ ?>
-                                <td><?=$t->{$r}?></td>
-                            <?php } ?>
+                            <?php
+                                if ($aux==$t->IdUsuario){?>
+                            <td> </td>
+                            <td> </td>
+                                    <td><?=$t->Nombre;?></td>
+                            <?php }else { ?>
+                                    <td><?=$t->IdUsuario;?></td>
+                                    <td><?=$t->username;?></td>
+                                    <td><?=$t->Nombre;?></td>
+                                    
+                            <?php $aux=$t->IdUsuario;
+                                    
+                            }
+                            ?>
                             <td class="text-center">
-                                <button class="btn btn-primary glyphicon-plus add"> 
+                                <button class="btn btn-primary glyphicon-plus edit"> 
                                     <span class=glyphicon glyphicon-plus></span> Add
                                 </button>
                                 <button  class="btn btn-danger btn-primary delete">

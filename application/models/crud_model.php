@@ -17,6 +17,14 @@ class Crud_model extends CI_Model {
             $query = $this->db->get($from);
             return $query->result();   
         }
+        public function selectDis($select,$from){
+            if(!empty($select)){
+                $this->db->distinct();
+                $this->db->select($select);
+            }
+            $query= $this->db->get($from);
+            return $query->result();
+        }
         function insert($data,$table){
             $this->db->insert($table,$data);
             return $this->db->insert_id();

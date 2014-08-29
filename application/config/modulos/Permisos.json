@@ -30,7 +30,7 @@
         "Nombre":{
             "tableName":"permisos",
             "fieldName":"Nombre",
-            "displayName":"nombre",
+            "displayName":"Nombre Permiso",
             "formInput":"text",
             "validation":["required"],
             "default":"",

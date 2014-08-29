@@ -38,6 +38,7 @@ class Proveedor extends CI_Controller {
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             
+            $data['nombreJson'] = "Proveedor";
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
