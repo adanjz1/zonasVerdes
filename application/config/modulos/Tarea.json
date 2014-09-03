@@ -1,0 +1,46 @@
+{
+    "permitId":6,
+    "title":"Tarea",
+    "titleA":"Alta de Tareas",
+    "titleB":"Baja de Tareas",
+    "titleM":"Modificación de Tareas",
+    "from":"tarea",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"tarea",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "Nombre":{
+            "tableName":"tarea",
+            "fieldName":"Descripcion",
+            "displayName":"Descripcion",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+         "Categoria":{
+            "tableName":"categoria",
+            "fieldName":"Categoria",
+            "formValue":"id",
+            "formOption":"Categoria",
+            "where":"",
+            "join":"categoria.id = tarea.Categoria",
+            "displayName":"Categoria",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }
+        
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "permitId":5,
+    "title":"Categorias",
+    "titleA":"Alta de Categoria",
+    "titleB":"Baja de Categoria",
+    "titleM":"Modificación de Categoria",
+    "from":"categoria",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"categoria",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "Nombre":{
+            "tableName":"categoria",
+            "fieldName":"Categoria",
+            "displayName":"Categoria",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }       
+    }
+}
