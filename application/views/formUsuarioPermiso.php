@@ -41,7 +41,7 @@
                               }
                          }
                     }
-                    if ($z==6){
+                    if ($z==7){
                        echo '<div class="from-group"> 
                         <label for="NombreUsuario">El usuario tiene todos los premisos</label></div>';  
                     }else{
@@ -74,7 +74,7 @@
                         }
                 }  
                 
-          if ($z==6) { ?>
+          if ($z==7) { ?>
           <a href="../lista"><button>Regresar</button></a>
           <?php }else{ ?>
         <button type="submit" class="btn btn-default">Guardar</button>
