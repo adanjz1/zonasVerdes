@@ -82,12 +82,12 @@
             "showList":false
         },
         "Especie":{
-            "tableName":"Especiearbol",
+            "tableName":"especie",
             "fieldName":"Especie",
             "formValue":"id",
             "formOption":"Especie",
             "where":"",
-            "join":"epeciearbol.id = trabajo.Especie",
+            "join":"epecie.id = trabajo.Especie",
             "displayName":"Especie",
             "formInput":"select",
             "validation":["required"],

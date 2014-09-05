@@ -1,0 +1,31 @@
+{
+    "permitId":11,
+    "title":"Especie",
+    "titleA":"Alta de Especie de los arboles",
+    "titleB":"Baja de Especie de los arboles",
+    "titleM":"Modificación de Especie de los arboles",
+    "from":"especie",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"especie",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "Nombre":{
+            "tableName":"especie",
+            "fieldName":"Especie",
+            "displayName":"Especie",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }       
+    }
+}

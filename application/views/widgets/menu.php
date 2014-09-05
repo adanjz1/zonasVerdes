@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Zonas verdes</a>
+        <a class="navbar-brand" href="#"> <img src="../../../media/img/image.png" alt="Zona Verde"> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -17,11 +17,11 @@
             "isId":true,
             "showList":false
         },
-        "Tarea":{
-            "tableName":"comuna",
-            "fieldName":"Comuna",
+        "Trabajo":{
+            "tableName":"trabajo",
+            "fieldName":"Trabajo",
             "formValue":"id",
-            "formOption":"Comuna",
+            "formOption":"Trabajo",
             "where":"",
             "join":"comuna.id = trabajo.IDcomuna",
             "displayName":"Comuna",
