@@ -11,10 +11,13 @@ class Crud {
             $d['rows'] = array();
             $select =$json->from.'.id,';
             $join= array();
+            $i=0;
             foreach($json->fields as $f){
                 if($json->from != $f->tableName){
-                    $join[0] = $f->tableName;
-                    $join[1] = $f->join;
+                    $join[$i] = $f->tableName;
+                    $i++;
+                    $join[$i] = $f->join;
+                    $i++;
                 }
                 if($f->showList){
                     $select .= $sep.$f->tableName.'.'.$f->fieldName;
@@ -86,11 +89,11 @@ class Crud {
                 $select= $file.'.idPermiso,'.$file.'.IdUsuario' ;
                 $info = $t->crud_model->select($select, $file,$where, '');
                 $d['info'] = (array)$info;
+            }else{
+            $t->load->model('crud_model');
+            $usucp= $t->crud_model->selectDis("idUsuario",$file);
+            $d['usuariocp']=(array)$usucp;
             }
-
-           // $usucp= $t->crud_model->selectDis("usuario_permiso.idUsuario",$file);
-           // $d['usuariocp']=(array)$usucp;
-            
             $t->load->model('crud_model');
             $d['permisos']= $t->crud_model->select("id,nombre","permisos","", '');
             $d['usuarios']= $t->crud_model->select("id,username","usuarios","", '');

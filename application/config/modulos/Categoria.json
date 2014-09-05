@@ -19,7 +19,7 @@
         },
         "Nombre":{
             "tableName":"categoria",
-            "fieldName":"Categoria",
+            "fieldName":"categoria",
             "displayName":"Categoria",
             "formInput":"text",
             "validation":["required"],

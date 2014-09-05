@@ -5,6 +5,7 @@
   <div class="panel-body">
        <?php
           $z=0;
+          $cp=1;
           if ($id==''){
           echo '<form action=\'../save\' method=\'POST\'> 
                   <div class="from-group"> 
@@ -12,15 +13,15 @@
                   <select name="idUsuario">';
           
           foreach ($usuarios as $u){
-                           // $us=0;
-                           // foreach ($usuariocp as $f){
-                           //       if ($u->id==$f->idUsuario){
-                           //           $us=1;
-                           //       }
-                           //    }
-                           // if ($us==0){
+                           $us=0;
+                           foreach ($usuariocp as $f){
+                                 if ($u->id==$f->idUsuario){
+                                      $us=1;
+                                 }
+                            }
+                            if ($us==0){
                                 echo '<option value='.$u->id."> ".$u->username."</option>" ;
-                           // }
+                            }
                         } 
            echo ' </select>'
           . '</div>';
@@ -34,14 +35,18 @@
            echo ' </select>     
                </div>';
           } else {
-                    foreach ($permisos as $p){
+              $cp=0;
+              foreach ($permisos as $p){
+                  $cp++;
+              }
+              foreach ($permisos as $p){
                         foreach ($info as $f){
                               if ($p->id==$f->idPermiso){
                                   $z=$z+1;
                               }
                          }
                     }
-                    if ($z==7){
+                    if ($z==$cp){
                        echo '<div class="from-group"> 
                         <label for="NombreUsuario">El usuario tiene todos los premisos</label></div>';  
                     }else{
@@ -74,7 +79,7 @@
                         }
                 }  
                 
-          if ($z==7) { ?>
+          if ($z==$cp) { ?>
           <a href="../lista"><button>Regresar</button></a>
           <?php }else{ ?>
         <button type="submit" class="btn btn-default">Guardar</button>

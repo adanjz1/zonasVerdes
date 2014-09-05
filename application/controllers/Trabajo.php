@@ -61,7 +61,7 @@ class Trabajo extends CI_Controller {
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Trabajo');
             }
-            redirect('Comuna/lista');
+            redirect('Trabajo/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');

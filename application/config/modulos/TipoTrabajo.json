@@ -1,14 +1,14 @@
 {
     "permitId":1,
-    "title":"Trabajo",
-    "titleA":"Alta de Trabajo",
-    "titleB":"Baja de Trabajo",
-    "titleM":"Modificación de Trabajo",
-    "from":"trabajo",
+    "title":"TipoTrabajo",
+    "titleA":"Alta de Tipo De Trabajo",
+    "titleB":"Baja de Tipo De Trabajo",
+    "titleM":"Modificación de Tipo De Trabajo",
+    "from":"tipotrabajo",
     "where":"",
     "fields": {
         "id":{
-            "tableName":"trabajo",
+            "tableName":"tipotrabajo",
             "fieldName":"id",
             "displayName":"id",
             "formInput":"hidden",
@@ -17,13 +17,37 @@
             "isId":true,
             "showList":false
         },
-        "Comuna":{
+        "Tarea":{
             "tableName":"comuna",
             "fieldName":"Comuna",
             "formValue":"id",
             "formOption":"Comuna",
             "where":"",
-            "join":"comuna.id = trabajo.comuna",
+            "join":"comuna.id = trabajo.IDcomuna",
+            "displayName":"Comuna",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "IDTrabajo":{
+            "tableName":"tipotrabajo",
+            "fieldName":"IDTrabajo",
+            "displayName":"id Trabajo",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "":{
+            "tableName":"comuna",
+            "fieldName":"comuna",
+            "formValue":"id",
+            "formOption":"Comuna",
+            "where":"",
+            "join":"comuna.id = trabajo.IDcomuna",
             "displayName":"Comuna",
             "formInput":"select",
             "validation":["required"],
@@ -82,14 +106,10 @@
             "showList":false
         },
         "Especie":{
-            "tableName":"Especiearbol",
+            "tableName":"trabajo",
             "fieldName":"Especie",
-            "formValue":"id",
-            "formOption":"Especie",
-            "where":"",
-            "join":"epeciearbol.id = trabajo.Especie",
             "displayName":"Especie",
-            "formInput":"select",
+            "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,

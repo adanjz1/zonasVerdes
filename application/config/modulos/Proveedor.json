@@ -17,6 +17,16 @@
             "isId":true,
             "showList":false
         },
+        "Cuit":{
+            "tableName":"proveedor",
+            "fieldName":"Cuit",
+            "displayName":"CUIT",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
         "Razon Social":{
             "tableName":"proveedor",
             "fieldName":"Razon_Social",
@@ -86,15 +96,15 @@
             "isId":false,
             "showList":true
         },
-        "TipoFactura":{
+        "CondicionFiscal":{
             "tableName":"proveedor",
-            "fieldName":"Tipo_de_Factura",
-            "displayName":"Tipo De Facturación",
+            "fieldName":"CondicionFiscal",
+            "displayName":"Condición Fiscal",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        }        
+        }       
     }
 }
