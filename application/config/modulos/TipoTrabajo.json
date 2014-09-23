@@ -19,131 +19,74 @@
         },
         "Trabajo":{
             "tableName":"trabajo",
-            "fieldName":"Trabajo",
+            "fieldName":"id",
             "formValue":"id",
             "formOption":"Trabajo",
             "where":"",
-            "join":"comuna.id = trabajo.IDcomuna",
-            "displayName":"Comuna",
+            "join":"trabajo.id = tipotrabajo.IDTrabajo",
+            "displayName":"Trabajo",
             "formInput":"select",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
         },
-        "IDTrabajo":{
+        "categoria":{
+            "tableName":"categoria",
+            "fieldName":"categoria",
+            "formValue":"id",
+            "formOption":"categoria",
+            "where":"",
+            "join":"categoria.id = tipotrabajo.categoria",
+            "displayName":"Categoria",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Tarea":{
+            "tableName":"tarea",
+            "fieldName":"Descripcion",
+            "formValue":"id",
+            "formOption":"Tarea",
+            "where":"",
+            "join":"tarea.id = tipotrabajo.descripcion",
+            "displayName":"Tarea",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Metroscuadrados":{
             "tableName":"tipotrabajo",
-            "fieldName":"IDTrabajo",
-            "displayName":"id Trabajo",
+            "fieldName":"MetroesCuadrados",
+            "displayName":"Metros cuadrados Vereda",
             "formInput":"hidden",
             "validation":["none"],
             "default":"",
-            "isId":true,
-            "showList":false
-        },
-        "":{
-            "tableName":"comuna",
-            "fieldName":"comuna",
-            "formValue":"id",
-            "formOption":"Comuna",
-            "where":"",
-            "join":"comuna.id = trabajo.IDcomuna",
-            "displayName":"Comuna",
-            "formInput":"select",
-            "validation":["required"],
-            "default":"",
             "isId":false,
             "showList":true
         },
-        "Calle":{
-            "tableName":"trabajo",
-            "fieldName":"Calle",
-            "displayName":"Calle",
+        "unidades":{
+            "tableName":"tipotrabajo",
+            "fieldName":"Unidades",
+            "displayName":"Unidades",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        },
-        "Altura":{
-            "tableName":"trabajo",
-            "fieldName":"Altura",
-            "displayName":"Altura",
+        },"Tipo":{
+            "tableName":"tipotrabajo",
+            "fieldName":"Tipo",
+            "displayName":"Tipo",
             "formInput":"text",
             "validation":["required"],
             "default":"",
             "isId":false,
             "showList":true
-        },
-        "FechaIn":{
-            "tableName":"trabajo",
-            "fieldName":"FechaIn",
-            "displayName":"Fecha de Ingreso",
-            "formInput":"datetime-local",
-            "validation":["required"],
-            "default":"",
-            "isId":false,
-            "showList":true
-        },
-        "FechaFin":{
-            "tableName":"trabajo",
-            "fieldName":"FechaFin",
-            "displayName":"Fecha de finalización",
-            "formInput":"datetime-local",
-            "validation":["required"],
-            "default":"",
-            "isId":false,
-            "showList":true
-        },
-        "ResolucionLegal":{
-            "tableName":"trabajo",
-            "fieldName":"ResolucionLegal",
-            "displayName":"Resolucion legal",
-            "formInput":"Text",
-            "validation":[],
-            "default":"",
-            "isId":false,
-            "showList":false
-        },
-        "Especie":{
-            "tableName":"trabajo",
-            "fieldName":"Especie",
-            "displayName":"Especie",
-            "formInput":"text",
-            "validation":["required"],
-            "default":"",
-            "isId":false,
-            "showList":false
-        },
-        "AlturaArb":{
-            "tableName":"trabajo",
-            "fieldName":"AlturaArb",
-            "displayName":"Altura Arbol",
-            "formInput":"text",
-            "validation":["required"],
-            "default":"",
-            "isId":false,
-            "showList":false
-        },
-        "DAP":{
-            "tableName":"trabajo",
-            "fieldName":"DAP",
-            "displayName":"DAP",
-            "formInput":"text",
-            "validation":["required"],
-            "default":"",
-            "isId":false,
-            "showList":false       
-        },
-        "Observacion":{
-            "tableName":"trabajo",
-            "fieldName":"Observacion",
-            "displayName":"Observación",
-            "formInput":"textarea",
-            "validation":[],
-            "default":"",
-            "isId":false,
-            "showList":false
         }        
     }
 }
