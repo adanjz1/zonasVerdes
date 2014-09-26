@@ -47,7 +47,7 @@
         },
         "Tarea":{
             "tableName":"tarea",
-            "fieldName":"Descripcion",
+            "fieldName":"tarea",
             "formValue":"id",
             "formOption":"Tarea",
             "where":"",
@@ -61,7 +61,7 @@
         },
         "Metroscuadrados":{
             "tableName":"tipotrabajo",
-            "fieldName":"MetroesCuadrados",
+            "fieldName":"MetrosCuadrados",
             "displayName":"Metros cuadrados Vereda",
             "formInput":"hidden",
             "validation":["none"],

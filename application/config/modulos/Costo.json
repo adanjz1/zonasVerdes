@@ -1,0 +1,80 @@
+{
+    "permitId":1,
+    "title":"Costo",
+    "titleA":"Alta de Costo",
+    "titleB":"Baja de Costo",
+    "titleM":"Modificacion de Costo",
+    "from":"costo",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"costo",
+            "fieldName":"id",
+            "displayName":"IDCosto",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },        
+        "Proveedor":{
+            "tableName":"proveedor",
+            "fieldName":"proveedor",
+            "formValue":"id",
+            "formOption":"proveedor",
+            "where":"",
+            "join":"proveedor.id = costo.proveedor",
+            "displayName":"Proveedor",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },        
+        "tarea":{
+            "tableName":"tarea",
+            "fieldName":"tarea",
+            "formValue":"id",
+            "formOption":"Tarea",
+            "where":"",
+            "join":"costo.tarea = tarea.id",
+            "displayName":"Tarea Descripción",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "PrecioCorizado":{
+            "tableName":"costo",
+            "fieldName":"PrecioCotizado",
+            "displayName":"Precio Cotizado",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Cambio":{
+            "tableName":"costo",
+            "fieldName":"Cambio",
+            "displayName":"Día Cambio",
+            "formInput":"datetime",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "IDUsuario":{
+            "tableName":"costo",
+            "fieldName":"IDUsuario",
+            "displayName":"Usuario Cambio",
+            "formInput":"datetime",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }
+        
+    }
+}

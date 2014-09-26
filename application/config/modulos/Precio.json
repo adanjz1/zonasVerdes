@@ -1,0 +1,80 @@
+{
+    "permitId":1,
+    "title":"Precio",
+    "titleA":"Alta de Precio",
+    "titleB":"Baja de Precio",
+    "titleM":"Modificacion de Precio",
+    "from":"precio",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"precio",
+            "fieldName":"id",
+            "displayName":"IDPrecio",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },        
+        "comuna":{
+            "tableName":"comuna",
+            "fieldName":"Comuna",
+            "formValue":"id",
+            "formOption":"Comuna",
+            "where":"",
+            "join":"comuna.id = precio.comuna",
+            "displayName":"Comuna",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },        
+        "tarea":{
+            "tableName":"tarea",
+            "fieldName":"tarea",
+            "formValue":"id",
+            "formOption":"Tarea",
+            "where":"",
+            "join":"precio.tarea = tarea.id",
+            "displayName":"Descripción",
+            "formInput":"select",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "precio":{
+            "tableName":"precio",
+            "fieldName":"PrecioCotizado",
+            "displayName":"Precio Cotizado",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "Cambio":{
+            "tableName":"precio",
+            "fieldName":"Cambio",
+            "displayName":"Día de Cambio",
+            "formInput":"datetime",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
+        "IDUsuario":{
+            "tableName":"precio",
+            "fieldName":"IDUsuario",
+            "displayName":"Usuario Cambio",
+            "formInput":"datetime",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }
+        
+    }
+}

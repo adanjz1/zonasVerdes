@@ -29,7 +29,7 @@
         },
         "Razon Social":{
             "tableName":"proveedor",
-            "fieldName":"Razon_Social",
+            "fieldName":"proveedor",
             "displayName":"Razon Social",
             "formInput":"text",
             "validation":["required"],

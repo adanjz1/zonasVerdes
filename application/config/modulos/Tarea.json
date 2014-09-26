@@ -19,7 +19,7 @@
         },
         "Nombre":{
             "tableName":"tarea",
-            "fieldName":"Descripcion",
+            "fieldName":"tarea",
             "displayName":"Descripcion",
             "formInput":"text",
             "validation":["required"],
