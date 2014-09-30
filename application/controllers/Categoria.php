@@ -57,15 +57,18 @@ class Categoria extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Categoria');
+                saveLog($this,'Categoria nueva. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Categoria');
+                saveLog($this,'Categoria modificada. '.json_encode($_POST));
             }
             redirect('Categoria/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Categoria');
+            saveLog($this,'Categoria borrada. ID: '.$id);
             redirect('Categoria/lista');
         }
 }

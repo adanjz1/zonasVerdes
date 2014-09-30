@@ -57,15 +57,18 @@ class Especie extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Especie');
+                saveLog($this,'Especie nueva. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Especie');
+                saveLog($this,'Especie modificada. '.json_encode($_POST));
             }
             redirect('Especie/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Especie');
+            saveLog($this,'Especie borrada. '.$id);
             redirect('Especie/lista');
         }
 }

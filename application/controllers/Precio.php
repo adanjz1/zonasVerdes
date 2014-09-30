@@ -57,15 +57,18 @@ class Precio extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Precio');
+                saveLog($this,'Precio nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Precio');
+                saveLog($this,'Precio modificado. '.json_encode($_POST));
             }
             redirect('Precio/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Precio');
+            saveLog($this,'Precio borrado. '.json_encode($_POST));
             redirect('Precio/lista');
         }
 }

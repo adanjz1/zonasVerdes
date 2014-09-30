@@ -52,15 +52,18 @@ class Estado extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Estado');
+                saveLog($this,'Estado nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Estado');
+                saveLog($this,'Estado modificado. '.json_encode($_POST));
             }
             redirect('Estado/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Estado');
+            saveLog($this,'Estado borrado. '.$id);
             redirect('Estado/lista');
         }
 }

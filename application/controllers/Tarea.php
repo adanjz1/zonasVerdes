@@ -57,15 +57,18 @@ class Tarea extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Tarea');
+                saveLog($this,'Tarea nueva. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Tarea');
+                saveLog($this,'Tarea modificada. '.json_encode($_POST));
             }
             redirect('Tarea/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Tarea');
+            saveLog($this,'Tarea borrada. ID:'.$id);
             redirect('Tarea/lista');
         }
 }

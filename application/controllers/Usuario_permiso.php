@@ -53,15 +53,18 @@ class Usuario_permiso extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'usuario_permiso');
+                saveLog($this,'Permiso de usuario nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'usuario_permiso');
+                saveLog($this,'Permiso de usuario modificado. '.json_encode($_POST));
             }
             redirect('usuario_permiso/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'usuario_permiso');
+            saveLog($this,'Permiso de usuario borrado. ID:'.$id);
             redirect('usuario_permiso/lista');
         }
 }

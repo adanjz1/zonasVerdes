@@ -57,15 +57,18 @@ class Costo extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Costo');
+                saveLog($this,'Costo nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Costo');
+                saveLog($this,'Costo modificado. '.json_encode($_POST));
             }
             redirect('Costo/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Costo');
+            saveLog($this,'Costo borrado. '.$id);
             redirect('Costo/lista');
         }
 }

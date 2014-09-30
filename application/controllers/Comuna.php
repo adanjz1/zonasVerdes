@@ -57,15 +57,18 @@ class Comuna extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Comuna');
+                saveLog($this,'Comuna nueva. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Comuna');
+                saveLog($this,'Comuna modificada. '.json_encode($_POST));
             }
             redirect('Comuna/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Comuna');
+            saveLog($this,'Comuna borrada. '.$id);
             redirect('Comuna/lista');
         }
 }

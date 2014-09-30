@@ -57,15 +57,18 @@ class Trabajo extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Trabajo');
+                saveLog($this,'Trabajo nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Trabajo');
+                saveLog($this,'Trabajo modificado. '.json_encode($_POST));
             }
             redirect('Trabajo/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Trabajo');
+            saveLog($this,'Trabajo borrado. ID:'.json_encode($_POST));
             redirect('Trabajo/lista');
         }
 }

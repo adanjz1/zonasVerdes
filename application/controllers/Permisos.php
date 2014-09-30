@@ -46,15 +46,18 @@ class Permisos extends CI_Controller {
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
                 $this->crud_model->insert($_POST,'Permisos');
+                saveLog($this,'Permiso nuevo. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
                 $this->crud_model->update($_POST,'Permisos');
+                saveLog($this,'Permiso modificado. '.json_encode($_POST));
             }
             redirect('Permisos/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Permisos');
+            saveLog($this,'Permiso borrado. '.$id);
             redirect('Permisos/lista');
         }
 }
