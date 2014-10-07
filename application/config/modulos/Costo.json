@@ -47,7 +47,7 @@
         },
         "PrecioCorizado":{
             "tableName":"costo",
-            "fieldName":"PrecioCotizado",
+            "fieldName":"costo",
             "displayName":"Precio Cotizado",
             "formInput":"text",
             "validation":["required"],
