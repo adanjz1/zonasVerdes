@@ -51,7 +51,7 @@
             "formValue":"id",
             "formOption":"Tarea",
             "where":"",
-            "join":"tarea.id = tipotrabajo.descripcion",
+            "join":"tarea.id = tipotrabajo.tarea",
             "displayName":"Tarea",
             "formInput":"select",
             "validation":["required"],

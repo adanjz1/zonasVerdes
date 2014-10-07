@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Trabajo extends CI_Controller {
+class TrabajoABM extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -37,7 +37,7 @@ class Trabajo extends CI_Controller {
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
-            $this->parser->parse('listAlta', $data);
+            $this->parser->parse('list', $data);
             $this->parser->parse('widgets/footer', $data);
         }
         public function add($id=''){
@@ -63,13 +63,13 @@ class Trabajo extends CI_Controller {
                 $this->crud_model->update($_POST,'Trabajo');
                 saveLog($this,'Trabajo modificado. '.json_encode($_POST));
             }
-            redirect('Trabajo/lista');
+            redirect('TrabajoABM/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
             $this->crud_model->delete($id,'Trabajo');
             saveLog($this,'Trabajo borrado. ID:'.json_encode($_POST));
-            redirect('Trabajo/lista');
+            redirect('TrabajoABM/lista');
         }
 }
 

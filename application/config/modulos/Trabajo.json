@@ -17,6 +17,16 @@
             "isId":true,
             "showList":false
         },
+        "Trabajo":{
+            "tableName":"trabajo",
+            "fieldName":"trabajo",
+            "displayName":"O.S.",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        },
         "Comuna":{
             "tableName":"comuna",
             "fieldName":"Comuna",
