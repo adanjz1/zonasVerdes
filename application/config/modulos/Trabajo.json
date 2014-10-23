@@ -19,7 +19,7 @@
         },
         "Trabajo":{
             "tableName":"trabajo",
-            "fieldName":"trabajo",
+            "fieldName":"Observacion",
             "displayName":"O.S.",
             "formInput":"text",
             "validation":["required"],
@@ -92,12 +92,12 @@
             "showList":false
         },
         "Especie":{
-            "tableName":"especie",
+            "tableName":"especiearbol",
             "fieldName":"Especie",
             "formValue":"id",
             "formOption":"Especie",
             "where":"",
-            "join":"especie.id = trabajo.Especie",
+            "join":"especiearbol.id = trabajo.Especie",
             "displayName":"Especie",
             "formInput":"select",
             "validation":["required"],
