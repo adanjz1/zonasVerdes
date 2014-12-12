@@ -38,7 +38,7 @@ class Trabajo extends CI_Controller {
             $this->load->helper('form');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
-            $this->parser->parse('widgets/fileuploader', $data);
+            //$this->parser->parse('widgets/fileuploader', $data);
             $this->parser->parse('listAlta', $data);
             $this->parser->parse('widgets/footer', $data);
         }

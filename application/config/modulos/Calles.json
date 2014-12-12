@@ -1,0 +1,31 @@
+{
+    "permitId":5,
+    "title":"Calles",
+    "titleA":"Alta de Calles",
+    "titleB":"Baja de Calles",
+    "titleM":"Modificación de Calles",
+    "from":"calles",
+    "where":"",
+    "fields": {
+        "id":{
+            "tableName":"calles",
+            "fieldName":"id",
+            "displayName":"id",
+            "formInput":"hidden",
+            "validation":["none"],
+            "default":"",
+            "isId":true,
+            "showList":false
+        },
+        "Nombre":{
+            "tableName":"calles",
+            "fieldName":"Calle",
+            "displayName":"Calle",
+            "formInput":"text",
+            "validation":["required"],
+            "default":"",
+            "isId":false,
+            "showList":true
+        }       
+    }
+}

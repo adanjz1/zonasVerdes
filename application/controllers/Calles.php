@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class TrabajoABM extends CI_Controller {
+class Calles extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -28,13 +28,12 @@ class TrabajoABM extends CI_Controller {
         }   
         public function lista(){
             $this->load->library('crud');
-            $data = $this->crud->getDataList('Trabajo',$this);
+            $data = $this->crud->getDataList('Calles',$this);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
             
-            $data['nombreJson'] = "Trabajo";
-            $data['module']="TrabajoABM";
+            $data['nombreJson'] = "Calles";
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
@@ -43,7 +42,7 @@ class TrabajoABM extends CI_Controller {
         }
         public function add($id=''){
             $this->load->library('crud');
-            $data = $this->crud->getFormData('Trabajo',$this,$id);
+            $data = $this->crud->getFormData('Calles',$this,$id);
             
             $this->load->model('usuarios_model');
             $data['permisions'] = $this->usuarios_model->getPermissions($_SESSION['usuario']->id);
@@ -51,28 +50,26 @@ class TrabajoABM extends CI_Controller {
             $this->load->library('parser');
             $this->parser->parse('widgets/header', $data);
             $this->parser->parse('widgets/menu', $data);
-            $data['module']="TrabajoABM";
             $this->parser->parse('form', $data);
             $this->parser->parse('widgets/footer', $data);
         }
         public function save(){
             if(empty($_POST['id'])){
                 $this->load->model('crud_model');
-                $data['module']="TrabajoABM";
-                $this->crud_model->insert($_POST,'Trabajo');
-                saveLog($this,'Trabajo nuevo. '.json_encode($_POST));
+                $this->crud_model->insert($_POST,'Calles');
+                saveLog($this,'Categoria nueva. '.json_encode($_POST));
             }else{
                 $this->load->model('crud_model');
-                $this->crud_model->update($_POST,'Trabajo');
-                saveLog($this,'Trabajo modificado. '.json_encode($_POST));
+                $this->crud_model->update($_POST,'Calles');
+                saveLog($this,'Categoria modificada. '.json_encode($_POST));
             }
-            redirect('TrabajoABM/lista');
+            redirect('Calles/lista');
         }
         public function delete($id){
             $this->load->model('crud_model');
-            $this->crud_model->delete($id,'Trabajo');
-            saveLog($this,'Trabajo borrado. ID:'.json_encode($_POST));
-            redirect('TrabajoABM/lista');
+            $this->crud_model->delete($id,'Calles');
+            saveLog($this,'Categoria borrada. ID: '.$id);
+            redirect('Calles/lista');
         }
 }
 
